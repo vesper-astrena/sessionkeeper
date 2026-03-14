@@ -88,6 +88,14 @@ Built on [Playwright](https://playwright.dev/python/). Sessions include cookies,
 - **Reliability**: Services have 85-95% solve rates. Humans have 100%.
 - **Breakage**: New CAPTCHA types break services. Humans adapt instantly.
 
+## Support Development
+
+SessionKeeper is MIT licensed and free forever. If it saves you time, consider supporting development:
+
+- [Buy on Gumroad ($9)](https://vesperfinch.gumroad.com) — same code, supports continued development
+- Star this repo on GitHub
+- Share with someone who automates browsers
+
 ## License
 
 MIT
