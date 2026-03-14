@@ -113,27 +113,25 @@ class SessionKeeper:
                 f"or provide a custom config dict."
             )
 
+        self._playwright_cm = None
         self._playwright = None
         self._browser = None
         self._context = None
 
     async def __aenter__(self):
-        self._playwright = await async_playwright().__aenter__()
+        self._playwright_cm = async_playwright()
+        self._playwright = await self._playwright_cm.start()
         return self
 
     async def __aexit__(self, *args):
         if self._context:
-            try:
-                await self._context.close()
-            except:
-                pass
+            try: await self._context.close()
+            except: pass
         if self._browser:
-            try:
-                await self._browser.close()
-            except:
-                pass
-        if self._playwright:
-            await self._playwright.__aexit__(*args)
+            try: await self._browser.close()
+            except: pass
+        if self._playwright_cm:
+            await self._playwright_cm.__aexit__(*args)
 
     def _get_browser_launcher(self):
         """Get the appropriate browser launcher."""
