@@ -1,0 +1,36 @@
+[build-system]
+requires = ["setuptools>=64", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "sessionkeeper"
+version = "0.1.0"
+description = "Browser session manager for automation that handles CAPTCHA gracefully"
+readme = "README.md"
+license = {text = "MIT"}
+requires-python = ">=3.8"
+authors = [
+    {name = "Vesper Astrena"}
+]
+keywords = ["browser", "automation", "session", "captcha", "playwright", "login"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Topic :: Software Development :: Testing",
+    "Topic :: Internet :: WWW/HTTP :: Browsers",
+]
+dependencies = [
+    "playwright>=1.20",
+]
+
+[project.urls]
+Homepage = "https://github.com/vesper-astrena/sessionkeeper"
+Repository = "https://github.com/vesper-astrena/sessionkeeper"
+
+[project.scripts]
+sessionkeeper = "sessionkeeper:main"
+
+[tool.setuptools]
+py-modules = ["sessionkeeper"]
